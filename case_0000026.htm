@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <script type="text/javascript">
+        //если окно было открыто для авторизации, нужно отправить сигнал родителю, окно будет закрыто
+        if (window.opener) {
+            try {
+                var origin = window.opener.origin ? window.opener.origin : window.opener.location.origin;
+            } catch (e) {
+                var origin = 'https://help.mos-gorsud.ru';
+            }
+
+            if ('https://help.mos-gorsud.ru' === origin || 'https://mos-gorsud.ru' === origin) {
+                window.opener.postMessage(JSON.stringify({auth:false}), origin);
+            }
+        }
+    </script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+                        Информация по делу № 33-30300/2022 | Информация по гражданским делам апелляционной инстанции | Информация по судебным делам | Сервисы | Московский городской суд | Официальный портал судов общей юрисдикции города Москвы
+            </title>
+
+        <link rel=“canonical” href=“https://mos-gorsud.ru/mgs/services/cases/details/447ab420-11ad-11ed-8082-1522caf7040f” >
+    <!--[if lt IE 9]>
+    <script src="/resources/js/html5shiv/html5shiv.min.js?v=378"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="/resources/js/html5shiv/es5-shim.min.js?v=378"></script>
+        <script src="/resources/js/html5shiv/respond.min.js?v=378"></script>
+        <script src="/resources/js/html5shiv/html5shiv-printshiv.min.js?v=378"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="/static/css/jquery.css?v=378"/>
+    <link rel="stylesheet" href="/static/css/styles.css?v=378"/>
+    <link rel="stylesheet" href="/static/css/fastsearch.css?v=378"/>
+    <link rel="stylesheet" href="/static/css/header.css?v=378"/>
+    <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="/resources/libs/alertifyjs/css/alertify.css?v=378">
+    <link rel="stylesheet" href="/resources/libs/alertifyjs/css/themes/croc.css?v=378">
+
+    <script type="text/javascript">
+    var require = {
+        "baseUrl": "/resources/js",
+        "locale": "en",
+        "paths": {
+            "async": "/resources/js/async/async",
+            "new-design-logic": "/resources/js/new-design-logic/croc",
+            "new-design-logic-custom": "/resources/js/new-design-logic-custom/croc-custom",
+            "mobile-scripts": "/resources/js/mobile-scripts/croc-mobile",
+            "googlemaps": "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru&key=AIzaSyAj7HJWqxxp7FRStX3IdhmWOmp6s6M3x3U",
+            "gmaps": "/resources/js/gmaps/gmaps",
+            "croc-map-logic": "/resources/js/croc-map-logic/croc-map",
+            "jquery-mousewheel": "/resources/js/jquery-mousewheel/jquery.mousewheel-3.0.6.pack",
+            "slick": "/resources/js/slick/slick.min",
+            "icheck": "/resources/js/icheck/icheck.min",
+            "jquery-truncate": "/resources/js/jquery-truncate/jquery-truncate",
+            "jquery-selectbox": "/resources/js/jquery-selectbox/jquery.selectbox-0.2.min",
+            "jquery-jscrollpane": "/resources/js/jquery-jscrollpane/jquery.jscrollpane.min",
+            "jquery-scrolltofixed": "/resources/js/jquery-scrolltofixed/jquery-scrolltofixed-min",
+            "jquery-timepicker": "/resources/js/jquery-timepicker/jquery.timepicker.min",
+            "jquery-ui": "/resources/js/jquery-ui/jquery-ui.min",
+            "material": "/resources/js/material/material.min",
+            "moment-with-locales": "/resources/js/moment-with-locales/moment-with-locales.min",
+            "jquery": "/resources/js/jquery/jquery-1.11.1.min",
+            "jquery-debounce": "/resources/js/jquery-debounce/jquery-throttle-debounce.min",
+            "work-comment": "/resources/js/common/work-comment",
+            "ekko-lightbox": "/resources/js/ekko-lightbox/ekko-lightbox",
+            "jquery-mask": "/resources/js/jquery-mask/jquery.mask",
+            "clockpicker": "/resources/js/clockpicker/clockpicker",
+            "maskedinput-mobile": "/resources/js/maskedinput-mobile/jquery.maskedinput-mobile.min",
+            "jquery-validation": "/resources/js/jquery-validation/jquery.validate.min",
+            "jquery-validation-methods": "/resources/js/jquery-validation-methods/additional-methods",
+            "progress-spin": "/resources/js/progress-spin/progressSpin",
+            "raphael": "/resources/js/raphael/raphael",
+            "select2": "/resources/js/select2/select2.min",
+            "jquery-form": "/resources/js/jquery-form/jquery.form.min",
+            "jquery-serialize-object": "/resources/js/jquery-serialize-object/jquery.serialize-object.min",
+            "handlebars": "/resources/js/handlebars/handlebars-v3.0.3",
+            "uppod": "/resources/js/uppod/uppod",
+            "alertify": "/resources/js/alertify/alertify.min",
+            "requirejs-text": "/resources/js/requirejs-text/text",
+            "bootstrap": "/resources/js/bootstrap/bootstrap.min",
+            "bootstrap-datepicker-locale": "/resources/js/bootstrap-datepicker-locale/bootstrap-datepicker.ru.min",
+            "bootstrap-datepicker": "/resources/js/bootstrap-datepicker/custom_modified-bootstrap-datepicker",
+            "translator-js": "/resources/js/translator-js/translator.min",
+            "translator-config": "/js/translations/config",
+            "translations": "/js/translations/messages/ru",
+            "yandexMaps": "https://api-maps.yandex.ru/2.1/?lang=ru_RU",
+            "router-js": "/resources/js/router-js/router",
+            "router": "/js/fos_js_routes",
+            "recaptchaCallback": "https://www.google.com/recaptcha/api.js?onload=onloadCallbackRecaptcha&render=explicit",
+            "recaptcha": "https://www.google.com/recaptcha/api",
+            "modal-helper": "/resources/js/modal-helper/modalHelper",
+            "video-helper": "/resources/js/video-helper/videoHelper",
+            "shorten-helper": "/resources/js/shorten-helper/shortenHelper",
+            "modal-helper-mobile": "/resources/js/modal-helper-mobile/modalHelper-mobile",
+            "searchTable-helper": "/resources/js/searchTable-helper/searchTableHelper",
+            "searchTableLk-helper": "/resources/js/searchTableLk-helper/searchTableHelperLk",
+            "simpleTable-helper": "/resources/js/simpleTable-helper/simpleTableHelper",
+            "caseSearchField-helper": "/resources/js/helpers/caseSearchField-helper",
+            "modalImage-helper": "/resources/js/modalImage-helper/modalImage-helper",
+            "tooltip-helper": "/resources/js/tooltip-helper/tooltipHelper",
+            "flash-helper": "/resources/js/flash-helper/flashHelper",
+            "datePicker-helper": "/resources/js/datePicker-helper/datePicker-helper",
+            "dateTime-helper-mobile": "/resources/js/dateTime-helper-mobile/dateTime-helper-mobile",
+            "dateTime-helper": "/resources/js/dateTime-helper/dateTime-helper",
+            "cryptopro": "/resources/js/cryptopro/cadesplugin_api",
+            "cryptoproManager": "/resources/js/cryptoproManager/cryptoproManager",
+            "cryptoproAPI-ie": "/resources/js/cryptoproAPI-ie/cryptoproAPI-ie",
+            "cryptoproAPI-chrome": "/resources/js/cryptoproAPI-chrome/cryptoproAPI-chrome",
+            "spinnerHelper": "/resources/js/spinnerHelper/spinnerHelper",
+            "bootbox-helper": "/resources/js/bootbox-helper/bootboxHelper",
+            "twig-js-helper": "/resources/js/twig-js-helper/twigJsHelper",
+            "page-content-editor": "/resources/js/page-content-editor/page-content-editor",
+            "page-content-jstree-formatter": "/resources/js/page-content-jstree-formatter/page-content-jstree-formatter",
+            "upload-helper": "/resources/js/upload-helper/upload-helper",
+            "bootstrap-modal": "/resources/js/bootstrap-modal/bootstrap-modal-3.3.4",
+            "underscore": "/resources/js/underscore/underscore-min",
+            "sessionManager": "/resources/js/sessionManager/sessionManager",
+            "ckeditor-helper": "/resources/js/ckeditor-helper/ckeditorHelper",
+            "handlebarsHelper": "/resources/js/handlebarsHelper/handlebarsHelper",
+            "dataFormatter": "/resources/js/dataFormatter/dataFormatter",
+            "dataTables-helper": "/resources/js/dataTables-helper/dataTables-helper",
+            "jquery-treegrid": "/resources/js/jquery-treegrid/jquery.treegrid.min",
+            "jquery-treegrid-bootstrap-3": "/resources/js/jquery-treegrid-bootstrap-3/jquery.treegrid.bootstrap3",
+            "jquery-datatables": "/resources/js/jquery-datatables/jquery.dataTables.min",
+            "bootstrap-3": "/resources/js/bootstrap/bootstrap.min",
+            "bootbox": "/resources/js/bootbox/bootbox",
+            "bootstrap-select": "/resources/js/bootstrap-select/bootstrap-select",
+            "swfobject": "/resources/js/swfobject/swfobject.min",
+            "ckeditor": "../resources/libs/ckeditor/ckeditor",
+            "jstree": "/resources/js/jstree/jstree.min",
+            "twigjs": "/resources/js/twigjs/twig",
+            "page-visibility": "/resources/js/page-visibility/page-visibility",
+            "hls": "/resources/js/hls/hls.min",
+            "email-subscription": "/resources/js/common/email-subscription",
+            "plyr": "/resources/js/plyr/plyr.min",
+            "angular": "/resources/js/angular/angular.min",
+            "jquery-ui/ui/widget": "/resources/js/jquery-ui/ui/widget/jquery.ui.widget",
+            "jquery-iframe-transport": "/resources/js/jquery-iframe-transport/jquery.iframe-transport",
+            "jquery.fileupload": "/resources/js/jquery.fileupload/jquery.fileupload",
+            "jquery.fileupload-audio": "/resources/js/jquery.fileupload-audio/jquery.fileupload-audio",
+            "jquery.fileupload-video": "/resources/js/jquery.fileupload-video/jquery.fileupload-video",
+            "jquery.fileupload-image": "/resources/js/jquery.fileupload-image/jquery.fileupload-image",
+            "jquery.fileupload-process": "/resources/js/jquery.fileupload-process/jquery.fileupload-process",
+            "jquery.fileupload-validate": "/resources/js/jquery.fileupload-validate/jquery.fileupload-validate",
+            "jquery.file-upload-angular": "/resources/js/jquery.file-upload-angular/jquery.fileupload-angular",
+            "head": "/resources/js/head",
+            "marked": "/resources/libs/marked-0.7.0/marked.min",
+            "vendor": "https://mos-gorsud.ru/static/vendors.js?v=378",
+            "mainSearch": "https://mos-gorsud.ru/static/mainSearch.js?v=378",
+            "": "/resources/js/"
+        },
+        "shim": {
+            "jquery-validation": {"deps": ["jquery"]},
+            "jquery-validation-methods": {"deps": ["jquery-validation"]},
+            "jquery-mask": {"deps": ["jquery"]},
+            "bootstrap": {"deps": ["jquery"]},
+            "bootbox": {"deps": ["jquery"]},
+            "bootstrap-modal": {"deps": ["jquery-ui"]},
+            "bootstrap-3": {"deps": ["jquery"]},
+            "jquery-ui": {"deps": ["jquery"]},
+            "progress-spin": {"deps": ["jquery", "raphael"]},
+            "jquery-form": {"deps": ["jquery"]},
+            "jquery-truncate": {"deps": ["jquery"]},
+            "jquery-serialize-object": {"deps": ["jquery"]},
+            "translations": {"deps": ["translator-config"]},
+            "translator-config": {"deps": ["translator-js"]},
+            "ekko-lightbox": {"deps": ["bootstrap"]},
+            "router": {"deps": ["router-js"]},
+            "handlebars": {"deps": ["translations", "router"]},
+            "upload-helper": {"deps": ["jquery-ui"]},
+            "spinnerHelper": {"deps": ["jquery-ui"]},
+            "cryptopro": {"deps": ["jquery"]},
+            "cryptoproManager": {"deps": ["cryptopro"]},
+            "sessionManager": {"deps": ["jquery"]},
+            "handlebarsHelper": {"deps": ["jquery"]},
+            "dataFormatter": {"deps": ["jquery"]},
+            "dateTime-helper": {"deps": ["new-design-logic-custom"]},
+            "dataTables-helper": {"deps": ["jquery-datatables"]},
+            "jquery-treegrid": {"deps": ["jquery"]},
+            "jquery-datatables": {"deps": ["jquery"]},
+            "bootstrap-select": {"deps": ["jquery", "bootstrap-3"]},
+            "jquery-treegrid-bootstrap-3": {"deps": ["jquery-treegrid"]},
+            "cases/navigation-controller": {"deps": ["jquery"]},
+            "croc-map-logic": {"deps": ["gmaps", "common/common-controller"]},
+            "gmaps": {"deps": ["googlemaps"]},
+            "jquery-debounce": {"deps": ["jquery"]},
+            "common/common-controller": {"deps": ["new-design-logic-custom", "modalImage-helper"]},
+            "email-subscription": {"deps": ['jquery', 'jquery-validation-methods', 'translations']},
+            "new-design-logic-custom": {"deps": ["new-design-logic"]},
+            "new-design-logic": {"deps": ["jquery-timepicker", "jquery-mousewheel", "jquery-ui", "slick", "jquery-truncate", "jquery-mask", "jquery-jscrollpane", "jquery-selectbox", "icheck", "jquery-validation-methods", "jquery-scrolltofixed", "head"]},
+            "mobile-scripts": {"deps": ["maskedinput-mobile", "clockpicker", "material", "moment-with-locales", "jquery-mousewheel", "jquery-ui", "slick", "jquery-selectbox", "icheck", "jquery-validation-methods", "jquery-scrolltofixed"]},
+            "icheck": {"deps": ["jquery"]},
+            "jquery-timepicker": {"deps": ["jquery-ui"]},
+            "jquery-jscrollpane": {"deps": ["jquery", "jquery-mousewheel"]},
+            "modal-helper": {"deps": ["jquery"]},
+            "video-helper": {"deps": ["jquery"]},
+            "clockpicker": {"deps": ["jquery"]},
+            "moment-with-locales": {"deps": ["jquery"]},
+            "material": {"deps": ["jquery"]},
+            "slick": {"deps": ["jquery"]},
+            "jquery-selectbox": {"deps": ["jquery"]},
+            "jquery-scrolltofixed": {"deps": ["jquery"]},
+            "cases/searchForm-view": {"deps": ["jquery"]},
+            "jurisdiction/departmental-view": {"deps": ["jquery-ui"]},
+            "jurisdiction/casesIndex-view": {"deps": ["jquery-ui"]},
+            "jurisdiction/territorial-view": {"deps": ["jquery-ui"]},
+            "jurisdiction/ndCalculator-view": {"deps": ["jquery"]},
+            "jurisdiction/courtInformation-view": {"deps": ["jquery-ui"]},
+            "jurisdiction/reception-view": {"deps": ["jquery-ui"]},
+            "jurisdiction/intellectualProperty-view": {"deps": ["jquery-ui"]},
+            "personalArea/certificateSelectionForm-view": {"deps": ["bootstrap-modal"]},
+            "bootstrap-datepicker-locale": {"deps": ["bootstrap-datepicker"]},
+            "datePicker-helper": {"deps": ["bootstrap-datepicker-locale"]},
+            "jquery-mousewheel": {"deps": ["jquery"]},
+            "twig-js-helper": {"deps": ["jquery"]},
+            "page-content-editor": {"deps": ["jquery"]},
+            "jstree": {"deps": ["jquery"]},
+            "swfobject": {"deps": ["jquery"]},
+            "page-visibility": {"deps": ["jquery"]},
+            "hls": {"deps": ["require"], "exports": "Hls"},
+            "head": {"deps": ["jquery", "jquery-scrolltofixed", "jquery-jscrollpane"]},
+            "marked": {'exports':'marked'},
+            "mainSearch": {"deps": ["vendor"]},
+        }
+    };</script>
+<script type="text/javascript" src="/js/requirejs/require.min.js?v=378"></script>
+    <script src="https://mos-gorsud.ru/static/vendors.js?v=378" ></script>
+
+    <script type="text/javascript">
+
+        try {
+            var flashError = '[]';
+            flashError = JSON.parse(flashError);
+            if (!Array.isArray(flashError)) {
+                flashError = null;
+            }
+            if (flashError) {
+                require(['flash-helper'], function() {
+                    flashError.forEach(function(e) {
+                        $.flashHelper.showError(e, true)
+                    });
+                });
+            }
+        } catch (e) {
+        }
+
+        window.useRecaptcha = true;
+        window.reCaptchaApiKey = '6LeNDwwTAAAAALqwe2J0LOTEnIzUPmG_ZFmJMt7m';
+        window.isMobileVersion = false;
+
+        var onloadCallbackRecaptcha = function () {
+            window.renderRecaptcha();
+        };
+
+        requirejs.config({
+            waitSeconds: 60,
+            urlArgs: function (id, url) {
+                var args = 'v=' + '378';
+                return (url.indexOf('?') === -1 ? '?' : '&') + args;
+            }
+        });
+
+        require(['./common/common-controller']);
+    </script>
+
+            <script type="text/javascript">
+        require([
+        	'./cases/searchForm-controller',
+            'simpleTable-helper',
+        ], function() {
+	        $.simpleTableHelper.init();
+        });
+    </script>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=378"/>
+</head>
+<body>
+
+<div class="wrapp_old_browser" style="display: none;">
+    <div id="old_browser_notification" class="old-browser" style="display: none;">
+        <div class="container ta-center">
+            <p class="title">В этом браузере сайт может отображаться некорректно. Рекомендуем Вам установить более современный браузер.</p>
+            <a href="http://www.google.by/intl/ru/chrome/browser/" class="Chrome" rel="nofollow" target="_blank" title="Chrome"> <i class="ico"></i>Chrome</a>
+            <a href="https://www.apple.com/safari/" rel="nofollow" class="Safari" target="_blank" title="Safari"> <i class="ico"></i> Safari</a>
+
+            <a href="https://www.mozilla.org/ru/firefox/new/" rel="nofollow" class="Firefox" target="_blank" title="Firefox"> <i class="ico"></i>Firefox</a>
+            <a href="http://www.opera.com/ru" rel="nofollow" target="_blank" class="Opera" title="Opera"> <i class="ico"></i> Opera</a>
+            <a href="http://windows.microsoft.com/ru-ru/internet-explorer/download-ie" rel="nofollow" target="_blank" class="Explorer" title="IE"> <i class="ico"></i>Explorer</a>
+            <div class="old_browser_notification_Close"></div>
+        </div>
+    </div>
+</div>
+<div class="wrapper ">
+
+    <header class="header"></header>
+    
+
+
+<script type="text/javascript">
+    var header = {
+        host: "https://mos-gorsud.ru/",
+        assistantHomeURL: 'https://help.mos-gorsud.ru',
+        logo: "https://mos-gorsud.ru/resources/img/logo_i.png?v=378",
+        topMenu: {
+            case: "https://mos-gorsud.ru/mgs/search",
+            hearings: "https://mos-gorsud.ru/mgs/hearing?hearingRangeDateFrom=18.10.2022",
+            territorial: "https://mos-gorsud.ru/mgs/services/territorial?courtInternalName=mgs",
+            calc: "https://mos-gorsud.ru/mgs/services/calc?courtInternalName=mgs",
+            lk: "https://mos-gorsud.ru/lk/login"
+        },
+        currentCourt: "Московский городской суд",
+        courts: [
+                                               {url: "https://mos-gorsud.ru/mgs", name: "Московский городской суд"},
+                                                {url: "https://mos-gorsud.ru/rs/babushkinskij", name: "Бабушкинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/basmannyj", name: "Басманный районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/butyrskij", name: "Бутырский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/gagarinskij", name: "Гагаринский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/golovinskij", name: "Головинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/dorogomilovskij", name: "Дорогомиловский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/zamoskvoreckij", name: "Замоскворецкий районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/zelenogradskij", name: "Зеленоградский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/zyuzinskij", name: "Зюзинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/izmajlovskij", name: "Измайловский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/koptevskij", name: "Коптевский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/kuzminskij", name: "Кузьминский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/kuncevskij", name: "Кунцевский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/lefortovskij", name: "Лефортовский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/lyublinskij", name: "Люблинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/meshchanskij", name: "Мещанский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/nagatinskij", name: "Нагатинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/nikulinskij", name: "Никулинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/ostankinskij", name: "Останкинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/perovskij", name: "Перовский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/preobrazhenskij", name: "Преображенский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/presnenskij", name: "Пресненский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/savyolovskij", name: "Савёловский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/simonovskij", name: "Симоновский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/solncevskij", name: "Солнцевский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/taganskij", name: "Таганский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/tverskoj", name: "Тверской районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/timiryazevskij", name: "Тимирязевский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/troickij", name: "Троицкий районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/tushinskij", name: "Тушинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/hamovnicheskij", name: "Хамовнический районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/horoshevskij", name: "Хорошёвский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/cheryomushkinskij", name: "Черёмушкинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/chertanovskij", name: "Чертановский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/shcherbinskij", name: "Щербинский районный суд"},
+                    ],
+        user: {
+            id: "",
+            name: ""
+        },
+        lkMenu: [],
+        maintenance: "",
+        loginTarget: ""
+    };
+</script>
+    <script src="https://mos-gorsud.ru/static/header.js?v=378" ></script>
+
+    <main class="content">
+
+                                
+            
+
+<!--BEGIN left bar -->
+<aside class="left_bar">
+
+    
+                    <div class="sidebar_menu blue_skine jsslide_menu">
+                <ul class="">
+                    
+                        
+                                                    
+                                    
+                        
+                                                    
+                                    <li class="have_submenu ">
+                        <a                                                                                                                  title="О суде">
+                            О суде
+                                                    </a>
+                                                    <ul >
+                                
+                        
+                                                    
+                                    <li class="have_submenu ">
+                        <a                                                                                                                  title="История суда">
+                            История суда
+                                                    </a>
+                                                    <ul >
+                                
+                        
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/info/history/istoriya-moskovskogo-gorodskogo-suda"                            title="История Московского городского суда">
+                            История Московского городского суда
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/info/history/muzej-moskovskogo-gorodskogo-suda"                            title="Музей Московского городского суда">
+                            Музей Московского городского суда
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/info/history/predsedateli-moskovskogo-gorodskogo-suda"                            title="Председатели Московского городского суда">
+                            Председатели Московского городского суда
+                                                    </a>
+                                            </li>
+                                        
+                            </ul>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/info/structure"                            title="Структура суда">
+                            Структура суда
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/info/jurisdiction"                            title="Категории дел, подсудных Московскому городскому суду">
+                            Категории дел, подсудных Московскому городскому суду
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/info/internal-activity"                            title="Акты, регулирующие вопросы внутренней деятельности суда">
+                            Акты, регулирующие вопросы внутренней деятельности суда
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/info/dannye-sudebnoj-statistiki-suda"                            title="Данные судебной статистики суда">
+                            Данные судебной статистики суда
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/info/new-judge"                            title="Порядок отбора кандидатов на должность судьи Московского городского суда">
+                            Порядок отбора кандидатов на должность судьи Московского городского суда
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/info/vacancy"                            title="Вакансии">
+                            Вакансии
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/info/orders"                            title="Информация о размещении заказов">
+                            Информация о размещении заказов
+                                                    </a>
+                                            </li>
+                                        
+                            </ul>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/contacts"                            title="Контакты и часы приёма">
+                            Контакты и часы приёма
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/news"                            title="Новости">
+                            Новости
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class="have_submenu ">
+                        <a                                                                                                                  title="Справочная информация">
+                            Справочная информация
+                                                    </a>
+                                                    <ul >
+                                
+                        
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/help/rekvizity-dlya-oplaty-gosudarstvennoj-poshliny"                            title="Реквизиты для оплаты государственной пошлины">
+                            Реквизиты для оплаты государственной пошлины
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/help/appeal-order"                            title="Порядок обжалования судебных актов">
+                            Порядок обжалования судебных актов
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/help/templates"                            title="Типовые формы заявлений">
+                            Типовые формы заявлений
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/help/familiarization"                            title="Порядок ознакомления с материалами дела лиц, участвующих в деле">
+                            Порядок ознакомления с материалами дела лиц, участвующих в деле
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/help/video-konferents-svyaz-vks"                            title="Видео-конференц-связь (ВКС)">
+                            Видео-конференц-связь (ВКС)
+                                                    </a>
+                                            </li>
+                                        
+                            </ul>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/rules"                            title="Правила пребывания посетителей в суде">
+                            Правила пребывания посетителей в суде
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/judicial-review"                            title="Обзоры судебной практики">
+                            Обзоры судебной практики
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class="have_submenu ">
+                        <a                                                                                                                  title="Пресс-служба">
+                            Пресс-служба
+                                                    </a>
+                                                    <ul >
+                                
+                        
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/press/contacts"                            title="Контакты">
+                            Контакты
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/press/media"                            title="Публикации">
+                            Публикации
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/press/gallery"                            title="Фотогалерея">
+                            Фотогалерея
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/press/video"                            title="Видеоматериалы">
+                            Видеоматериалы
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/press/docs"                            title="Документы">
+                            Документы
+                                                    </a>
+                                            </li>
+                                        
+                            </ul>
+                                            </li>
+                                                
+                                                    
+                                    <li class="have_submenu ">
+                        <a                                                                                                                  title="Сервисы">
+                            Сервисы
+                                                    </a>
+                                                    <ul >
+                                
+                        
+                                                    
+                                    <li class="have_submenu ">
+                        <a                                                                                                                  title="Электронная приёмная">
+                            Электронная приёмная
+                                                    </a>
+                                                    <ul >
+                                
+                        
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/services/reception/add"                            title="Подать обращение">
+                            Подать обращение
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/services/reception/appeal"                            title="Непроцессуальные обращения граждан">
+                            Непроцессуальные обращения граждан
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/services/reception/thanks"                            title="Благодарности">
+                            Благодарности
+                                                    </a>
+                                            </li>
+                                        
+                            </ul>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/services/territorial"                            title="Территориальная подсудность">
+                            Территориальная подсудность
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/services/calc"                            title="Калькулятор госпошлины">
+                            Калькулятор госпошлины
+                                                    </a>
+                                            </li>
+                                                
+                                                    
+                                    <li class=" ">
+                        <a                                                                                      href="https://mos-gorsud.ru/mgs/services/cases"                            title="Информация по судебным делам">
+                            Информация по судебным делам
+                                                    </a>
+                                            </li>
+                                        
+                            </ul>
+                                            </li>
+                                        
+                                        
+                </ul>
+            </div>
+        
+        
+        
+                    <div class="useful_links">
+    <div class="title"><span class="borderleft_title">Полезные ссылки</span></div>
+    <ul class="links_list">
+                <li><a href="/reception" title="Подать непроцессуальное обращение">Подать непроцессуальное обращение</a></li>
+        <li><a href="/faq" title="Вопросы и ответы">Вопросы и ответы</a></li>
+                <li><a href="/jury" title="Присяжные заседатели">Присяжные заседатели</a></li>
+
+        <li><a href="https://1ap.sudrf.ru/" target="_blank" rel="noreferrer" title="Первый апелляционный суд общей юрисдикции">Первый апелляционный суд общей юрисдикции</a></li>
+        <li><a href="https://2kas.sudrf.ru/" target="_blank" rel="noreferrer" title="Второй кассационный суд общей юрисдикции">Второй кассационный суд общей юрисдикции</a></li>
+
+                <li><a href="http://www.supcourt.ru/" target="_blank" rel="noreferrer" title="Верховный Cуд Российской Федерации">Верховный Cуд Российской Федерации</a></li>
+        <li><a href="http://www.ksrf.ru" target="_blank" rel="noreferrer" title="Конституционный Cуд Российской Федерации">Конституционный Cуд Российской Федерации</a></li>
+        <li><a href="http://www.echr.coe.int" target="_blank" rel="noreferrer" title="Европейский Cуд по правам человека">Европейский Cуд по правам человека</a></li>
+        <li><a href="http://mos-sud.ru/" target="_blank" rel="noreferrer" title="Портал мировых судей города Москвы">Портал мировых судей города Москвы</a></li>
+        <li><a href="http://usd.msk.sudrf.ru" target="_blank" rel="noreferrer" title="Управление Судебного департамента">Управление Судебного департамента</a></li>
+        <li><a href="https://sudrf.ru" target="_blank" rel="noreferrer" title="ГАС «Правосудие»">ГАС «Правосудие»</a></li>
+        <li><a href="https://adv.mos-gorsud.lawport.ru" target="_blank" rel="noreferrer" title="Портал для адвокатов Москвы">Портал для адвокатов Москвы</a></li>
+    </ul>
+</div>
+        
+                    <div class="sidebarslider-wrapper">
+                <div class="sidebar_slider">
+                    <div class="item">
+                        <a href="#" title="Сообщить о технической проблеме" class="js-work-comment js-work-comment-disabled">
+                            <div class="text sidebar-review-text">
+                                <span>Сообщить о <br>технической проблеме</span>
+                                <img src="/resources/img/bubble_feedback.png?v=378" alt="Сообщить о технической проблеме">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="sidebar_slider">
+                    <div class="item">
+                        <a href="/no-corruption" title="Противодействие коррупции" class="corruption-fight">
+                            <div class="text sidebar-review-text">
+                                <span>Противодействие <br/>коррупции</span>
+                                <img src="/resources/img/hand_corruption.png?v=378" width="45" alt="Противодействие коррупции">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+                                
+</aside>
+            <section class="middle_bar inner_nosider">
+                                                                                <div class="mainblock_title">
+                                
+<ul class="breadcrumb">
+            
+        <li>
+                            <a href="/" title="Главная">Главная</a>
+                    </li>
+            
+        <li>
+                            <a href="/mgs" title="Московский городской суд">Московский городской суд</a>
+                    </li>
+            
+        <li>
+                            Сервисы
+                    </li>
+            
+        <li>
+                            <a href="/mgs/services/cases" title="Информация по судебным делам">Информация по судебным делам</a>
+                    </li>
+            
+        <li>
+                            <a href="/mgs/services/cases/appeal-civil" title="Информация по гражданским делам апелляционной инстанции">Информация по гражданским делам апелляционной инстанции</a>
+                    </li>
+            
+        <li>
+                            Информация по делу № 33-30300/2022
+                    </li>
+    </ul>
+
+
+                        </div>
+                                    
+                                                                    <h1>    Информация по делу № 33-30300/2022
+</h1>
+                                                                <div id="content" style="visibility:hidden" class="wrapper_innercontent">
+                                        <div class="main searchDetails ">
+        
+        <div class="detail-cart">
+            <div class="cardsud_wrapper">
+                
+    
+
+    <div class="row_card">
+        <div class="left">                        Уникальный идентификатор дела
+        </div>
+        <div class="right">            77RS0022-02-2022-007308-59
+        </div>
+    </div>
+
+
+
+
+    <div class="row_card">
+        <div class="left">                Номер дела
+    </div>
+        <div class="right">
+                    33-30300/2022
+
+            
+                    
+    </div>
+    </div>
+
+    
+
+    <div class="row_card">
+        <div class="left">                        Стороны
+        </div>
+        <div class="right"><strong>Истец: </strong>Мавлонов М.А.<br/><strong>Ответчик: </strong>АО &quot;Мосотделстрой №1&quot;<br/></div>
+    </div>
+
+    
+
+    <div class="row_card">
+        <div class="left">                        Дата поступления дела в апелляционную инстанцию
+        </div>
+        <div class="right">            01.08.2022
+        </div>
+    </div>
+
+    
+
+    <div class="row_card">
+        <div class="left">                        Дата окончания
+        </div>
+        <div class="right">            15.08.2022
+        </div>
+    </div>
+
+    
+
+    <div class="row_card">
+        <div class="left">                        Номер судебного состава
+        </div>
+        <div class="right">            10
+        </div>
+    </div>
+
+    
+
+    <div class="row_card">
+        <div class="left">                        Номер дела в суде нижестоящей инстанции
+        </div>
+        <div class="right">                                                <a href="/rs/preobrazhenskij/services/cases/claim-civil/details/483f1830-bb13-11ec-b2c3-edf24813d45e" target="_blank">М-2782/2022</a>
+                        </div>
+    </div>
+
+
+
+
+    <div class="row_card">
+        <div class="left">                Суд первой инстанции, судья
+    </div>
+        <div class="right">        Преображенский районный суд (Сакович Т.Н.)
+            </div>
+    </div>
+
+    
+
+    <div class="row_card">
+        <div class="left">            Категория дела
+        </div>
+        <div class="right">            46 - Трудовые споры о взыскании невыплаченной заработной платы, других выплат (и компенсации за задержку их выплаты)
+        </div>
+    </div>
+
+  
+    
+
+    <div class="row_card">
+        <div class="left">                        Результат рассмотрения
+        </div>
+        <div class="right">            
+            Отменить определение (постановление) частично, вынести решение по существу, 15.08.2022
+                    </div>
+    </div>
+
+ 
+    
+
+    <div class="row_card">
+        <div class="left">                        Основание решения суда
+        </div>
+        <div class="right">            Нарушение или неправильное применение норм процессуального права
+        </div>
+    </div>
+            </div>
+        </div>
+
+                                
+        
+        <div class="tabs_wrapper">
+            <ul>
+                                    <li><a href="#tabs-1">Движение дела</a></li>
+                                                    <li><a href="#tabs-2">Судебные заседания</a></li>
+                
+                                    <li><a href="#tabs-3">Судебные акты</a></li>
+                
+                            </ul>
+
+
+                                                                                <div id="tabs-1">
+                    <div role="tabpanel" class="tab-pane" id="state-history">
+                        
+<h3>История состояний</h3>
+
+<table class="custom_table margin-top-0 mainTable">
+    <thead class="hidden-xs">
+    <tr>
+        <th style="width: 150px;">
+            Дата
+        </th>
+        <th style="width: 320px;">
+            Состояние
+        </th>
+        <th>
+            Документ-основание
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+                        <tr>
+
+                    
+
+    
+<td>
+    
+        
+                                                01.08.2022
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                                                Зарегистрировано
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                                                
+                            
+        
+    </td>
+
+            </tr>
+                                <tr>
+
+                    
+
+    
+<td>
+    
+        
+                                                15.08.2022
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                                                Завершено
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                                                Определение суда апелляционной инстанции 
+                            
+        
+    </td>
+
+            </tr>
+                </tbody>
+</table>
+
+                        
+<h3>История местонахождения</h3>
+
+<table class="custom_table mainTable margin-top-0">
+    <thead class="hidden-xs">
+    <tr>
+        <th style="width: 150px;">
+            Дата
+        </th>
+        <th style="width: 320px;">
+            Местонахождение
+        </th>
+        <th>
+            Комментарий
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+            <tr>
+
+                
+
+    
+<td>
+    
+        
+                                                01.08.2022
+                            
+        
+    </td>
+
+                
+
+    
+<td>
+    
+        
+                                                У судьи
+                            
+        
+    </td>
+
+                
+
+    
+<td>
+    
+        
+                                                
+                            
+        
+    </td>
+
+        </tr>
+            <tr>
+
+                
+
+    
+<td>
+    
+        
+                                                29.09.2022
+                            
+        
+    </td>
+
+                
+
+    
+<td>
+    
+        
+                                                Вне суда
+                            
+        
+    </td>
+
+                
+
+    
+<td>
+    
+        
+                                                в экспедиции МГС
+                            
+        
+    </td>
+
+        </tr>
+        </tbody>
+</table>
+
+                    </div>
+                </div>
+                                        <div id="tabs-2">
+                    <div role="tabpanel" class="tab-pane" id="sessions">
+                            
+    <h3>Судебные заседания и беседы</h3>
+
+    <table class="custom_table mainTable margin-top-0">
+        <thead class="hidden-xs">
+        <tr>
+            <th style="width: 140px">
+                Дата и время
+            </th>
+            <th>
+                Зал
+            </th>
+            <th>
+                Стадия
+            </th>
+            <th>
+                Результат
+            </th>
+            <th>
+                Основание
+            </th>
+            <th>
+                Проводилась видеозапись
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+                    <tr >
+
+                    
+
+    
+<td>
+    
+        
+                                                15.08.2022 09:30
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                                                269 (Апелляционный корпус)
+                            
+        
+    </td>
+
+                <td>
+                    Судебное заседание
+                                    </td>
+
+                    
+
+    
+<td>
+    
+        
+                                                Рассмотрение завершено
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                                                
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                                                
+                            
+        
+    </td>
+            </tr>
+                </tbody>
+    </table>
+                        
+                    </div>
+                </div>
+            
+                            <div id="tabs-3">
+                    <div role="tabpanel" class="tab-pane" id="act-documents">
+                            <table class="custom_table mainTable">
+        <thead class="hidden-xs">
+        <tr>
+            <th>
+                Дата документа
+            </th>
+            <th>
+                Вид документа
+            </th>
+            <th>
+                Текст документа
+                <span class="info-circle-icon tooltip custom-tooltip-border" title="Как только сотрудник суда подготовит и загрузит документ, в этом столбце появится ссылка для его скачивания."></span>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+                    <tr >
+
+                    
+
+    
+<td>
+    
+        
+                                                03.06.2022
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                            Определение о возвращении заявления
+            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                            
+            
+        
+    </td>
+            </tr>
+                    <tr class="marked-row">
+
+                    
+
+    
+<td>
+    
+        
+                                                20.06.2022
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                            Частная жалоба
+        (Мавлонов М.А.)
+            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                            
+            
+        
+    </td>
+            </tr>
+                    <tr >
+
+                    
+
+    
+<td>
+    
+        
+                                                02.08.2022
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                            Технический акт распределения дел в электронном виде
+            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                            
+            
+        
+    </td>
+            </tr>
+                    <tr class="marked-row">
+
+                    
+
+    
+<td>
+    
+        
+                                                15.08.2022
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                            Определение суда апелляционной инстанции 
+            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                            
+            <a href="/mgs/cases/docs/content/4cfea740-1c67-11ed-9e87-af2ad979fc05">
+            Скачать файл
+        </a>
+                
+        
+    </td>
+            </tr>
+                    <tr >
+
+                    
+
+    
+<td>
+    
+        
+                                                15.08.2022
+                            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                            Протокол судебного заседания
+            
+        
+    </td>
+
+                    
+
+    
+<td>
+    
+        
+                            
+            
+        
+    </td>
+            </tr>
+                </tbody>
+    </table>
+                    </div>
+                </div>
+            
+                    </div>
+                <div class="wrapper_returnbtn">
+            <a href="#" class="btn_blue navigationBackLink" onclick="history.back() || $.searchForm.goBack('/mgs/services/cases/appeal-civil?courtInternalName=mgs'); return false;">
+                Вернуться к списку
+            </a>
+                            <div class="subscription-content" style="text-align: right;">
+                    <a class="subscribe_btn" id="subscriptionButton">Подписаться на обновления</a>
+                </div>
+                        <div style="float: right">
+                <div id="emailSubscription" style="display: inline">
+            <div class="subscription-content" style="display: none; margin-right: 15px; text-align: right">
+        <form onsubmit="return false;">
+            <div class="subscription-email">
+                
+
+
+<div  class="
+        fild_wrapper
+        
+        
+    "
+>
+    
+    
+    <div class="input_wrap">
+                                <input class="subscription-input form-control" type="text" name="email" maxlength="128"
+                               placeholder="Адрес электронной почты" />
+                            <span class="icon"></span>
+    </div>
+</div>            </div>
+                                    <input type="hidden" name="courtCode" value="77OS0000">
+                        <input type="hidden" name="caseId" value="447ab420-11ad-11ed-8082-1522caf7040f">
+                                <div class="subscription-controls">
+                <input type="submit" class="btn_blue subscription-button-submit" value="OK">
+                <button type="button"
+                        class="btn-link subscription-button-cancel">Отмена</button>
+            </div>
+        </form>
+    </div>
+    <div class="subscription-success"
+         style="display: none; line-height: normal">Адрес электронной почты ожидает подтверждения</div>
+        </div>            </div>
+            <script>
+                require(['router', 'flash-helper', 'email-subscription'], function () {
+                    $('#emailSubscription').emailSubscription({
+                        showButton: $('#subscriptionButton'),
+                        ajaxUrl: Routing.generate('emailCaseSubscribe'),
+                        onSuccess: function() {
+                            $.flashHelper.showSuccess('Письмо с ссылкой для подтверждения было выслано на указанный адрес электронной почты', 'bottom-right');
+                        },
+                        onError: function (error) {
+                            $('.subscription-button-submit').removeAttr('disabled');
+                            if (error.status === 500) {
+                                $.flashHelper.showError('К сожалению, сервис временно недоступен. Попробуйте повторить действие чуть позже');
+                                return false;
+                            }
+                        }
+                    });
+                });
+            </script>
+        </div>
+
+    </div>
+                </div>
+            </section>
+
+            
+            <div class="clear"></div>
+            </main>
+</div>
+
+<div id="cookie-disclaimer" class="cd-hidden">
+    <div class="cd-text">
+        <p class="cd-dis-bold">Официальный портал судов общей юрисдикции города Москвы использует
+            <a href="https://mos-gorsud.ru/cookie" target="_blank">файлы cookie</a> с целью персонализации сервисов и повышения удобства пользования порталом.</p>
+        <p>Если вы не хотите использовать файлы cookie, измените настройки браузера.</p>
+    </div>
+    <div class="cd-close-button"></div>
+</div>
+<script>
+    function hideCookieDisclaimer() {
+        document.querySelector('#cookie-disclaimer').classList.add('cd-hidden');
+        document.cookie = 'c-dis=1; max-age=' + (10 * 60 * 60 * 24 * 365); //10 years
+    }
+
+    function showCookieDisclaimer() {
+        document.querySelector('#cookie-disclaimer .cd-close-button').addEventListener('click', hideCookieDisclaimer);
+        if (document.cookie.indexOf('c-dis=1') === -1) {
+            document.querySelector('#cookie-disclaimer').classList.remove('cd-hidden');
+        }
+    }
+
+    window.addEventListener('load', showCookieDisclaimer);
+</script>
+<!-- BEGIN footer -->
+<footer class="footer_wrapper">
+    <section class="footer">
+        <div class="left_block">
+            <div class="social_icons">
+                <noindex><a href="https://vk.com/moscowcourt" class="icon_vk" title="Вконтакте"></a></noindex>
+                <noindex><a href="https://www.facebook.com/moscowcourt/" class="icon_fb" title="Facebook"></a></noindex>
+                <noindex><a href="https://www.instagram.com/mos_gorsud/" class="icon_instagram" title="Instagram"></a></noindex>
+                            </div>
+            <div class="copyright">
+                &copy; 2010–2022 <img src="https://mos-gorsud.ru/resources/img/CROC_logo_rus_RGB.png?v=378" alt="КРОК" title="КРОК" class="croc-copyright"/><br/>
+                Разработка и сопровождение
+                <div class="copyright">Тел.: +7 (495) 533-87-87</div>
+                
+                            </div>
+        </div>
+        <div class="middle_block">
+            <ul>
+                <li><a href="https://mos-gorsud.ru/npa" title="Нормативно-правовые акты">Нормативно-правовые акты</a></li>
+                <li><a href="https://mos-gorsud.ru/is-and-db" title="Перечни информационных систем и банков данных, находящихся в ведении судов">Перечни информационных систем и банков данных, находящихся в ведении судов</a></li>
+            </ul>
+        </div>
+        <div class="right_block">
+            <ul>
+                <li><a href="/judicial-community"
+                       title="Органы судейского сообщества">Органы судейского сообщества</a>
+                </li>
+                                                <li><a href="/prohibited?hearingRangeDateFrom=18.10.2022"
+                           title="Извещения о времени и месте рассмотрения административных дел в порядке главы 27.1 КАС РФ, 27.2 КАС РФ">Извещения о времени и месте рассмотрения административных дел в порядке главы 27.1 КАС РФ, 27.2 КАС РФ</a>
+                    </li>
+                                                                                            </ul>
+        </div>
+        <div class="aside_right_block">
+            <ul>
+                <li><a href="https://data.mos-gorsud.ru" target="_blank" rel="noreferrer" title="Портал открытых данных судов общей юрисдикции г. Москвы">Портал открытых данных судов общей юрисдикции г. Москвы</a></li>
+                <li><a href="/mgs/defend" title="Защита интеллектуальных прав">Защита интеллектуальных прав</a>
+            </ul>
+        </div>
+    </section>
+</footer>
+
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+                m[i].l = 1 * new Date();
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(1187093, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true
+            });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/1187093" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        var t = "script";
+        var p = document.location.protocol;
+        var j = document.createElement(t);
+        j.async = true;
+        j.type = "text/javascript";
+        j.src = ("https:" == p ? "https:" : "http:") + "//stat.sputnik.ru/cnt.js";
+        var s = document.getElementsByTagName(t)[0];
+        s.parentNode.insertBefore(j, s);
+    });
+</script>
+</body>
+</html>
