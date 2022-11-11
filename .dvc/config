@@ -1,0 +1,6 @@
+[core]
+    remote = s3-yc
+['remote "s3-yc"']
+    url = s3://ods-annulment-dvc
+    region = ru-central1
+    endpointurl = https://storage.yandexcloud.net
