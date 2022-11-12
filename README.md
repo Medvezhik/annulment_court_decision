@@ -2,15 +2,24 @@
 
 Проект посвящен исследованию решений судов общей юрисдикции первой инстанции на предмет возможности прогнозирования их отмены судами апелляционной инстанции.
 
-# Запуск
+# Настройка окружения
 
-Требования:
-* Python 3.8
-
-Запуск:
-1. Установить Python 3.8+
+1. Установить Python 3.8
 2. Установить python-библиотеки из requirements.txt.
-3. Выполнить `jupyter-lab`.
+```
+pip install -r requirements.txt
+
+# Если возникают проблема при установке pygit2, то вероятно вот этот баг:
+# https://github.com/iterative/dvc/issues/7096
+# В этом случае попробуйте:
+pip install --prefer-binary -r requirements.txt
+```
+## Данные
+
+Данные лежат в [Yandex Object Storage](https://cloud.yandex.ru/services/storage). Синхронизация данных делается через [dvc](https://dvc.org). Связаться с @nik123 для получения credentials для доступа к данным. Затем положить credentials в файл `~/.aws/credentials`. Протестировать доступ к данным:
+```
+dvc pull test.txt.dvc
+```
 
 # Статус
 
