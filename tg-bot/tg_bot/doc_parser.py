@@ -2,13 +2,12 @@ import os.path
 
 import docx
 import requests
-import telebot
 
-from config import load_cfg
-from exceptions import BotException
+from tg_bot.config import Config
+from tg_bot.exceptions import BotException
 
 
-def is_file_court_decision(bot, file_id):
+def is_file_court_decision(file_id, bot, cfg: Config):
     file_info = bot.get_file(file_id)
     _, ext = os.path.splitext(file_info.file_path)
     if ext.lower() not in [".doc", ".docx"]:
@@ -36,17 +35,3 @@ def is_file_court_decision(bot, file_id):
                 return True
 
     return False
-
-
-file_info = {
-    "file_id": "BQACAgIAAxkBAAMaY3naNgfVv0zKd7Q6FWTDYNUJPAEAAmAhAAJ2zNBL4CXB7mJG7RIrBA",
-    "file_path": "documents/file_6.doc",
-    "file_size": 35223,
-}
-
-cfg = load_cfg()
-tg_api_token = cfg.tg_api_token
-bot = telebot.TeleBot(tg_api_token)
-
-res = is_file_court_decision(bot, file_id=file_info["file_id"])
-print(res)

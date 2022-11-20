@@ -2,9 +2,9 @@ import os.path
 
 import telebot
 
-from config import load_cfg
-from doc_parser import is_file_court_decision
-from exceptions import BotException
+from tg_bot.config import load_cfg
+from tg_bot.doc_parser import is_file_court_decision
+from tg_bot.exceptions import BotException
 
 cfg = load_cfg()
 
@@ -49,10 +49,10 @@ def handle_docs(message):
         return
 
     try:
-        if not is_file_court_decision(bot, message.document.file_id):
+        if not is_file_court_decision(message.document.file_id, bot, cfg):
             bot.send_message(
                 message.chat.id,
-                f"Похоже что присланный документ не является судебным решением.",
+                f"Похоже, что присланный документ не является судебным решением.",
             )
             return
     except BotException:
@@ -62,4 +62,5 @@ def handle_docs(message):
     bot.send_message(message.chat.id, "Вероятность успешной апелляции: 100%")
 
 
+print("Starting listening to messages...")
 bot.polling(none_stop=True, interval=0)
