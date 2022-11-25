@@ -1,13 +1,15 @@
 import os.path
+from typing import List
 
 import docx
 import requests
+from docx.opc.exceptions import OpcError
 
 from tg_bot.config import Config
 from tg_bot.exceptions import BotException
 
 
-def is_file_court_decision(file_id, bot, cfg: Config):
+def is_tg_file_court_decision(file_id, bot, cfg: Config):
     file_info = bot.get_file(file_id)
     _, ext = os.path.splitext(file_info.file_path)
     if ext.lower() not in [".doc", ".docx"]:
@@ -28,10 +30,18 @@ def is_file_court_decision(file_id, bot, cfg: Config):
     with open(tmp_file, "wb") as f:
         f.write(response.raw.read())
 
-    ms_doc = docx.Document(tmp_file)
+    return is_ms_file_court_decision(tmp_file, cfg.court_required_words)
+
+
+def is_ms_file_court_decision(path, key_words: List[str]):
+    try:
+        ms_doc = docx.Document(path)
+    except OpcError as e:
+        print(f"Failed to parse file {path} with docx library: {e}")
+        raise BotException(f"Failed to parse file {path}")
+
     for p in ms_doc.paragraphs:
-        for w in cfg.court_required_words:
+        for w in key_words:
             if w in p.text:
                 return True
-
     return False
