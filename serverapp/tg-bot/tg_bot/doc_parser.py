@@ -21,7 +21,9 @@ def is_tg_file_court_decision(file_id, bot, cfg: Config):
             stream=True,
         )
     except requests.exceptions.RequestException as e:
-        print(f"Failed to retrieve information about the file at path '{file_info.file_path}': {e}")
+        print(
+            f"Failed to retrieve information about the file at path '{file_info.file_path}': {e}"
+        )
         raise BotException(f"Failed to retrieve information about the file")
 
     if not os.path.exists(cfg.ms_docs_dir):

@@ -32,7 +32,10 @@ def handle_text(message):
 
 @bot.message_handler(content_types=["document"])
 def handle_docs(message):
-    if message.document.mime_type not in ["application/msword", 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']:
+    if message.document.mime_type not in [
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ]:
         bot.send_message(
             message.chat.id, "Пожалуйста, пришлите решение суда в формате doc/docx"
         )
@@ -52,7 +55,7 @@ def handle_docs(message):
         if not is_tg_file_court_decision(message.document.file_id, bot, cfg):
             bot.send_message(
                 message.chat.id,
-                f"Похоже, что присланный документ не является судебным решением.",
+                "Похоже, что присланный документ не является судебным решением.",
             )
             return
     except BotException:
