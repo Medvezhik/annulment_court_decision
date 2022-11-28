@@ -1,0 +1,10 @@
+services:
+  tg_bot:
+    image: "nkodenko/ods-acd-tg-bot:latest"
+    restart: always
+    configs:
+      - source: tg_bot_config
+        target: /app/config.yml
+configs:
+  tg_bot_config:
+    file: ./tg-bot/config.yml
