@@ -9,6 +9,7 @@ venv/
 
 # DVC
 /test.txt
+/mosgorsud.csv
 /mosgorsud00.csv
 /mosgorsud01.csv
 /mosgorsud02.csv
