@@ -15,3 +15,5 @@ venv/
 /mosgorsud02.csv
 /mosgorsud03.csv
 /mosgorsud04.csv
+/tfidf.joblib
+/logreg.joblib
