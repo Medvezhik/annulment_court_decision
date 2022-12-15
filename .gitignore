@@ -17,3 +17,4 @@ venv/
 /mosgorsud04.csv
 /tfidf.joblib
 /logreg.joblib
+/stat.csv
