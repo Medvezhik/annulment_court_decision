@@ -5,6 +5,17 @@ services:
     configs:
       - source: tg_bot_config
         target: /app/config.yml
+  predictor:
+    image: "nkodenko/ods-acd-predictor:latest"
+    restart: always
+    environment:
+      DISABLE_MODEL: 0
+      VECTORIZER_PATH: "/data/tfidf.joblib"
+      MODEL_PATH:  "/data/logreg.joblib"
+    volumes:
+      - type: bind
+        source: ./predictor/data
+        target: /data
 configs:
   tg_bot_config:
     file: ./tg-bot/config.yml

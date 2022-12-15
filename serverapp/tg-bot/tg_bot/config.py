@@ -6,6 +6,7 @@ from yaml import load, Loader
 
 @dataclass
 class Config:
+    predictor_api_url: str
     # Telegram API Token to access Telegram Bot API
     tg_api_token: str
     # Words to search inside the document to determine if it is
