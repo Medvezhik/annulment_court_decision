@@ -1,0 +1,4 @@
+outs:
+- md5: d86c9ad31471ef34fba286fcf27f1be2
+  size: 1040765
+  path: logreg.joblib
