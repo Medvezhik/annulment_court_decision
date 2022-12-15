@@ -1,0 +1,11 @@
+# ML model:
+scikit-learn==1.1.2
+joblib==1.2.0
+pandas==1.5.2
+spacy==3.4.4
+ru_core_news_sm @ https://github.com/explosion/spacy-models/releases/download/ru_core_news_sm-3.4.0/ru_core_news_sm-3.4.0-py3-none-any.whl
+
+# FastAPI server
+fastapi==0.82.0
+uvicorn==0.18.3
+pydantic==1.10.2
