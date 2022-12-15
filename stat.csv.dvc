@@ -1,0 +1,4 @@
+outs:
+- md5: cfed1844015a9f0aa2f6b86200de894a
+  size: 1279
+  path: stat.csv
