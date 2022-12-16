@@ -1,6 +1,6 @@
 # Annulment Court Decision
 
-<img src="https://user-images.githubusercontent.com/114733751/207960109-2337a8f3-3766-4c31-a443-d424e7910540.png" width=100 />
+<img src="https://user-images.githubusercontent.com/114733751/207960109-2337a8f3-3766-4c31-a443-d424e7910540.png" width=200 />
 
 Исследование решений судов общей юрисдикции первой инстанции на предмет возможности прогнозирования их отмены судами апелляционной инстанции.
 
