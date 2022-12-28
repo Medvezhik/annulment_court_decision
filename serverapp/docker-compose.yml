@@ -8,6 +8,9 @@ services:
   predictor:
     image: "nkodenko/ods-acd-predictor:latest"
     restart: always
+    # uncomment for debugging:
+    # ports:
+    #   - "8080:8080"
     environment:
       DISABLE_MODEL: 0
       VECTORIZER_PATH: "/data/tfidf.joblib"
