@@ -37,4 +37,4 @@ def predict(text):
 
     text = convert(text)
     features = _tfidf.transform(pd.Series(text))
-    return _lr_clf.predict_proba(features)[0][0]
+    return _lr_clf.predict_proba(features)[0][1]
