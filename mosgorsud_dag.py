@@ -9,10 +9,16 @@ import shutil
 import time
 import docx
 import os
+import re
+import pandas as pd
+from joblib import load
+import ru_core_news_sm as ru
+from sklearn.metrics import roc_auc_score
 
 dir_doc = "/home/user/sud/doc/"
 dir_info = "/home/user/sud/info/"
 dir_case = "/home/user/sud/case/"
+csv_name = '/home/user/sud/mosgorsud_'+datetime.date.today().strftime('%Y_%m_%d')+'.csv'
 
 def get_from_url(fn, url):
     if(os.path.exists(fn)):
@@ -125,8 +131,8 @@ def download():
         print("FileExistsError")
         
     page = 1
-    date1 = datetime.date.today()-datetime.timedelta(days=14)
-    date2 = datetime.date.today()-datetime.timedelta(days=6)
+    date1 = datetime.date.today()-datetime.timedelta(days=13)
+    date2 = datetime.date.today()-datetime.timedelta(days=7)
     
     done = False
     while not done:
@@ -140,7 +146,7 @@ def download():
             page +=1
 
 def make_csv():
-    file = open('/home/user/sud/mosgorsud.csv', 'w', encoding='utf-8')
+    file = open(csv_name, 'w', encoding='utf-8')
     file.write('id,side,date1,date2,category,status,verdict,verdict_up,reason,text\n')
 
     files = sorted(os.listdir(dir_doc))
@@ -182,10 +188,51 @@ def make_csv():
     shutil.rmtree(dir_info)
     shutil.rmtree(dir_doc)
 
+lem = ru.load()
+lr = load('/home/user/sud/logreg.joblib')
+tfidf = load('/home/user/sud/tfidf.joblib')    
+
+def verdict_to_int(verdict_str):
+    if 'Оставить' in verdict_str.split():
+        return 0
+    if (('Отменить' in verdict_str.split()) 
+          or ('Изменить' in verdict_str.split())):
+        return 1
+
+def find_pdf(text):
+    if (text.find('%PDF') >= 0):
+        return 1
+    else:
+        return 0
+
+def convert(text):
+    text = text.lower()
+    text = " ".join(re.sub(r'[^u"а-яА-Я"]', ' ', text).split()) #удаляем не буквы
+    text = " ".join(re.sub(r'(^|\s)\w{1}(\s\w{1})*($|\s)', ' ', text).split()) #удаляем слова из 1 буквы
     
-with DAG(dag_id='mosgorsud_weekly_dag', start_date=datetime.datetime(2022, 10, 20, 6, 0), end_date=datetime.datetime(2022, 10, 26, 6, 0), schedule="0 6 * * 7") as dag:
+    doc = lem(text)
+    text = " ".join(token.lemma_ for token in doc)
+    return text
+    
+def monitoring_metrics():
+    data = pd.read_csv(csv_name)
+    data['target'] = data['verdict_up'].apply(verdict_to_int)
+    data = data[data['target'].notna()]
+    data['pdf'] = data['text'].apply(find_pdf)
+    data = data[data['pdf']==0]
+    data.drop_duplicates(inplace=True)
+    data['clear_text'] = data['text'].apply(convert)
+
+    features = tfidf.transform(data['clear_text'])
+    preds = lr.predict_proba(features)[:, 0]
+    target = data['target'].values
+    rocauc = roc_auc_score(target, preds)
+    print(rocauc)
+        
+with DAG(dag_id='mosgorsud_weekly_dag', start_date=datetime.datetime(2022, 10, 20, 6, 0), end_date=datetime.datetime(2023, 10, 26, 6, 0), schedule="0 6 * * 3") as dag:
     download_operator = PythonOperator(task_id='download', python_callable=download)
     make_csv_operator = PythonOperator(task_id='make_csv', python_callable=make_csv)
+    monitoring_operator = PythonOperator(task_id='monitoring', python_callable=monitoring_metrics)
 
-    download_operator >> make_csv_operator
+    download_operator >> make_csv_operator >> monitoring_operator
     
