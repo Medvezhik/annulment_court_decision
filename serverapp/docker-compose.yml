@@ -2,12 +2,14 @@ services:
   tg_bot:
     image: "nkodenko/ods-acd-tg-bot:latest"
     restart: always
+    pull_policy: always
     configs:
       - source: tg_bot_config
         target: /app/config.yml
   predictor:
     image: "nkodenko/ods-acd-predictor:latest"
     restart: always
+    pull_policy: always
     # uncomment for debugging:
     # ports:
     #   - "8080:8080"

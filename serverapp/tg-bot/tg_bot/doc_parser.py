@@ -1,4 +1,5 @@
 import os.path
+import logging
 from typing import List
 import subprocess
 
@@ -8,6 +9,9 @@ from docx.opc.exceptions import OpcError
 
 from tg_bot.config import Config
 from tg_bot.exceptions import BotException, UnsupportedFileTypeException
+
+
+logger = logging.getLogger(name=__name__)
 
 
 def is_tg_file_court_decision(file_id, bot, cfg: Config):
@@ -22,7 +26,7 @@ def is_tg_file_court_decision(file_id, bot, cfg: Config):
             stream=True,
         )
     except requests.exceptions.RequestException as e:
-        print(
+        logger.error(
             f"Failed to retrieve information about the file at path '{file_info.file_path}': {e}"
         )
         raise BotException("Failed to retrieve information about the file")
@@ -48,7 +52,7 @@ def get_text_from_tg_file(file_id, bot, cfg: Config) -> str:
             stream=True,
         )
     except requests.exceptions.RequestException as e:
-        print(
+        logger.error(
             f"Failed to retrieve information about the file at path '{file_info.file_path}': {e}"
         )
         raise BotException("Failed to retrieve information about the file")
@@ -68,17 +72,19 @@ def text_from_ms_word_file(path) -> str:
         ms_doc = docx.Document(path)
         text = " ".join(p.text for p in ms_doc.paragraphs)
     except OpcError as e:
-        print(f"Failed to parse file {path} with docx library: {e}. Extracting text with 'antiword'...")
+        logger.error(
+            f"Failed to parse file {path} with docx lib: {e}. Extracting text with 'antiword'..."
+        )
         # docx-python cannot parse some doc files.
         # Attempting to extract text from those files with antiword utility:
         process_res = subprocess.run(["antiword", path], capture_output=True, text=True)
         if process_res.returncode != 0:
-            print(f"Failed to parse file with antiword: {process_res.stderr}")
+            logger.error(f"Failed to parse file with antiword: {process_res.stderr}")
             raise BotException(f"Failed to parse file {path}")
         # Replace all newline characters with spaces:
         text = process_res.stdout.replace("\n", " ")
 
-    print(f"Successfully parsed the file {path}")
+    logging.debug(f"Successfully parsed the file {path}")
     return text
 
 
@@ -94,7 +100,7 @@ def is_ms_file_court_decision(path, key_words: List[str]):
     try:
         ms_doc = docx.Document(path)
     except OpcError as e:
-        print(f"Failed to parse file {path} with docx library: {e}")
+        logger.error(f"Failed to parse file {path} with docx library: {e}")
         raise BotException(f"Failed to parse file {path}")
 
     for p in ms_doc.paragraphs:
