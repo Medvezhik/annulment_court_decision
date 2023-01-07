@@ -40,15 +40,20 @@ def get_predict(text: str):
 def start(m, res=False):
     bot.send_message(
         m.chat.id,
-        "Привет! Я annulment_court_decision_bot. Пришлите мне решение суда и я оценю "
-        "вероятность успешной апелляции.",
+        "Привет\\! Я `annulment_court_decision` бот\\. Пришлите мне решение суда и я оценю "
+        "вероятность успешной апелляции\\. Вы можете скачать примеры судебных решений "
+        "[здесь](https://disk.yandex.ru/d/2wrbqD5fYybgSg)",
+        parse_mode="MarkdownV2",
     )
 
 
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
     bot.send_message(
-        message.chat.id, "Пожалуйста, пришлите решение суда в формате doc/docx"
+        message.chat.id,
+        "Пожалуйста, пришлите решение суда в формате doc/docx\\."
+        "Вы можете скачать примеры судебных решений [здесь](https://disk.yandex.ru/d/2wrbqD5fYybgSg)",
+        parse_mode="MarkdownV2",
     )
 
 
@@ -59,7 +64,10 @@ def handle_docs(message):
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     ]:
         bot.send_message(
-            message.chat.id, "Пожалуйста, пришлите решение суда в формате doc/docx"
+            message.chat.id,
+            "Пожалуйста, пришлите решение суда в формате doc/docx\\. "
+            "Вы можете скачать примеры судебных решений [здесь](https://disk.yandex.ru/d/2wrbqD5fYybgSg)",
+            parse_mode="MarkdownV2",
         )
         return
 
